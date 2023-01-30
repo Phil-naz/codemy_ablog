@@ -1,0 +1,225 @@
+html, body {
+	font-family: 'Arial';
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	color: #444;
+}
+a {color: #fa1400;}
+a:hover {
+	font-weight: 600;
+	color: #ed7732;
+}
+a:visited {color: #7d6003;}
+.about {color: black}
+a:hover.about {color: black}
+.header {
+    width: 100%;
+/*	position: fixed;       /* Fixing top menu */
+	top: 0px;              /* Fixing top menu */
+	background: #f2e0ae;   /* Background for top menu */
+	list-style: none;
+}
+.logo {                    /* Style for logo */
+	width: 140px;
+	height: 60px;
+	background: #f2e0ae;   /* Background for top menu */
+
+}
+.logov1 {                    /* Style for logo */
+	background: url('../images/logov1.png') no-repeat;
+	width: 140px;
+	height: 50px;
+}
+ul.mainmenu {
+	margin: 0;
+	height: 60px;   /* thickness (толщина) of topmenu line */
+	font-size: 14px; /* menu font size */
+	/* overflow: hidden;   words are transferred when there is not enough space */
+}
+ul.mainmenu li {   /* setting distances near words of top menu */
+	float: left;
+	margin: 18px 40px 0 10px;
+	list-style: none;
+	padding-Left: 0;
+}
+ul.mainmenu li.logo {margin: 0;}
+.last {
+    color: #e6472e;
+    float: right;
+	text-decoration: none;
+	font-size: 14px; /* font size of menu's point 'Войти' */
+	margin: 50;
+}
+ul.mainmenu li.last {float: right;}
+ul.breadcrumbs li.last:after {content: "";}
+ul.control li.last {float: right; padding: 0 40px 0 0;}
+ul.control li.last:after {content: "\2192"; padding: 0 0 0 10px;}
+
+.topmenu a {
+    color: #fdc073;
+    text-decoration: none;
+	font-size: 14px; /* font size of menu's point 'Войти' */
+	margin: 0;
+}
+
+ul.mainmenu li a {
+	color: #e6472e;   /* Change link's color in top menu */
+	text-decoration: none;   /* Delete underline in top menu */
+}
+ul.mainmenu li a:hover {
+	color: #ed712f;
+}
+.leftchapters {
+    background: #eee;
+	width: 230px;
+	min-height: 100%;
+	margin: 0;
+	padding: 0px 0px 10px 0px;
+	list-style: none;
+	font-size: 14px;
+}
+.leftchapters a {
+	color: #444;  /* меняет цвет ссылок CATEGORIES слева */
+	background: #eee;   /* Left vertical stripe's background*/
+	text-decoration: none;
+}
+.leftchapters ul {
+	width: 230px;
+	min-height: 100%;
+	/* margin: 0; */
+	padding: 20px 10px 10px 20px;
+	list-style: none;
+	font-size: 20px;
+}
+.addbook a {
+    background-color: #0083C7;
+    color: white;
+    font-weight: 600;
+	text-decoration: none;
+	margin: 0px 0px 10px 0;
+}
+.addbook {
+    background-color: #0083C7;
+
+}
+.left-chapters ul li {   /* Indent (отступы) between points in left menu */
+	margin: 30px 0 0 0;
+	color: #999;
+}
+.link-read-post {
+	text-align: right;
+	align: right;
+    padding: 5px 10px 5px 10px;
+    margin: 0;
+    float: right;
+
+}
+.link-read-post a {
+	padding: 10px;
+	min-width: 100px;
+	background: #333671;
+	color: #fff;
+	text-decoration: none;
+}
+a.contact {
+    color: #e6472e;
+}
+img.img {
+	max-width: 100px;
+	height: auto;
+	float: left;
+	padding: 0 10px 10px 0;
+}
+img.img-book {
+	max-width: 200px;
+	height: auto;
+	float: left;
+	padding: 0 10px 10px 0;
+}
+.bottom {
+    width: 100%;
+	background: Gainsboro;
+    text-align: center;
+    font-weight: 700;
+}
+
+.head {
+    background: #eee;
+    font-weight: 700;
+}
+.selected {   /* Highlighting (Выделение) changed category */
+    background: #3F4137;
+    color: #FDC073;
+	text-decoration: none;
+	margin: 0px 0px 0px 0;
+	list-style: none;
+	width: 230px;
+}
+.form-label {
+    display: inline-block;
+    min-width: 200px;
+    vertical-align: top;
+}
+.form-input {
+    width: 370px;
+    font-size: 16px;
+}
+.form-error ul {
+    list-style: none;
+    padding: 0;
+    color: #CC0000;
+    font-weight: 700;
+}
+.list {
+    margin-top: 0; /* Отступ сверху */
+}
+.list-pages {
+	text-align: center;
+	margin: 0 0 20px 0;
+}
+.list-pages ul {
+	margin: 20px 0 0 0;
+	padding: 0;
+	list-style: none;
+}
+.list-pages ul li {
+	display: inline-block;
+	margin: 0 20px 0 0;
+}
+.list-pages a {
+	color: #000;
+	font-size: 24px;
+	text-decoration: none;
+}
+.list-pages .page-num, .page-num-selected {
+	display: inline-block;
+	width: 60px;
+	height: 44px;
+	padding: 16px 0 0 0;
+	border: 1px solid #d0d0d0;
+	border-radius: 30px;
+}
+.list-pages .page-num:hover {
+	box-shadow: 3px 3px 1px #d0d0d0;
+}
+.list-pages .page-num-selected {
+	border: none;
+	color: #000;
+	font-size: 20px;
+}
+.list-pages .page-num-selected:hover {
+	box-shadow: none;
+}
+.table_head {
+	background: aqua;
+	font-weight: 600;
+	text-align: center;
+}
+.column_main {
+	background: orange;
+	font-weight: 600;
+	text-align: center;
+}
+

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Edit Profile{% endblock %}
+{% block content %}
+
+{% if user.is_authenticated %}
+
+
+<h1>Edit Settings...</h1>
+
+<br><br>
+{{ user.profile.bio }}
+<br><br>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-secondary">Update Profile</button>
+</form>
+
+
+{% else %}<br>
+<div class="alert alert-danger" role="alert" align="center">You're not allowed here! (and you know it...)</div>
+{% endif %}
+
+<BR><br>
+
+{% endblock %}

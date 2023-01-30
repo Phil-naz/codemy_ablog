@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Edit Blog Post!{% endblock %}
+{% block content %}
+
+        {% if user.is_authenticated %}
+                    {% if user.id == post.author.id %}
+
+<h3>Delete: {{ post.title }}</h3>
+
+<form method="post">
+    {% csrf_token %}
+  <strong>Are you sure?!</strong><br><br>
+    <button class="btn btn-secondary">Delete Post!</button>
+</form>
+        {% else %}<br>
+        <div class="alert alert-danger" role="alert" align="center">You're not allowed here! (and you know it...)</div>
+        {% endif %}
+
+{% else %}<br>
+<div class="alert alert-danger" role="alert" align="center">You're not allowed here! (and you know it...)</div>
+{% endif %}
+
+
+            {% endblock %}
