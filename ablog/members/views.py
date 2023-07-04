@@ -1,4 +1,5 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
+
 from django.views import generic
 from django.views.generic import DetailView, CreateView
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordChangeForm
@@ -6,7 +7,12 @@ from django.urls import reverse_lazy
 from .forms import *
 from django.contrib.auth.views import PasswordChangeView
 from theblog.models import Profile
+from django.contrib.auth import logout
 
+
+def logout_view(request):
+    logout(request)
+    return redirect('theblog_home')
 
 class CreateProfilePageView(CreateView):
     model = Profile
@@ -22,7 +28,7 @@ class EditProfilePageView(generic.UpdateView):
     model = Profile
     template_name = 'registration/edit_profile_page.html'
     fields = ['bio', 'profile_pic', 'website_url', 'vk_url', 'facebook_url', 'twitter_url', 'instagram_url']
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('theblog_home')
 
 
 class ShowProfilePageView(DetailView):
@@ -59,7 +65,7 @@ class UserRegisterView(generic.CreateView):
 class UserEditView(generic.UpdateView):
     form_class = EditProfileForm
     template_name = 'registration/edit_profile.html'
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('theblog_home')
 
     def get_object(self):
         return self.request.user

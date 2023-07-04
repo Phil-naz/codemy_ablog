@@ -29,7 +29,7 @@ class Profile(models.Model):
 
 	def get_absolute_url(self):   # for redirects after adding data to table
 		# return reverse('article-detail', args=(str(self.id)))
-		return reverse('home')
+		return reverse('theblog_home')
 
 
 class Post(models.Model):
@@ -52,7 +52,7 @@ class Post(models.Model):
 
 	def get_absolute_url(self):   # for redirects after adding data to table
 		# return reverse('article-detail', args=(str(self.id)))
-		return reverse('home')
+		return reverse('theblog_home')
 
 
 	class Meta:
@@ -66,7 +66,3 @@ class Comment(models.Model):
 
 	def __str__(self):
 		return '%s - %s' % (self.post.title, self.name)
-
-	def get_absolute_url(self):   # for redirects after adding data to table
-		# return reverse('article-detail', args=(str(self.id)))
-		return reverse('home')

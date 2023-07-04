@@ -72,6 +72,7 @@ class AddCommentView(CreateView):
 	model = Comment
 	form_class = CommentForm
 	template_name = 'add_comment.html'
+	success_url = reverse_lazy('theblog_home')
 
 	def form_valid(self, form):
 		form.instance.post_id = self.kwargs['pk']
@@ -79,14 +80,14 @@ class AddCommentView(CreateView):
 
 	
 
-#	success_url = reverse_lazy('home')
+#	success_url = reverse_lazy('theblog_home')
 
 
 class AddCategoryView(CreateView):
 	model = Category
 	template_name = 'add_category.html'
 	fields = '__all__'
-	success_url = 'home'
+	success_url = '/../blog'
 
 	def get_context_data(self, *args, **kwargs):
 		cat_menu = Category.objects.all()
@@ -105,4 +106,4 @@ class UpdatePostView(UpdateView):
 class DeletePostView(DeleteView):
 	model = Post
 	template_name = 'delete_post.html'
-	success_url = reverse_lazy('home')
+	success_url = reverse_lazy('theblog_home')

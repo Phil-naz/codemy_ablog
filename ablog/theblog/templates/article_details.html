@@ -15,26 +15,31 @@
     <hr>
     <br>
 {% if post.header_image %}
-    <img src="{{ post.header_image.url }}"> <br><br>
+    <img src="{{ post.heer_image.url }}ader_image.url }}"> <br><br>
 {% endif %}
     {{ post.body|safe }}
 
     <br><br>
-    <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+    <a href="{% url 'theblog_home' %}" class="btn btn-secondary">Back</a>
 
     <br><hr><br>
     <form action="{% url 'like_post' post.pk %}" method="POST">
         		{% csrf_token %}
 
-                {% if user.is_authenticated %}
-                    {%if liked %}
-			        <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-danger btn-sm">Unlike</button>
-                    {% else %}
-			        <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-primary btn-sm">Like</button>
-                    {% endif %}
-                {% else %}
-        <small><a href="{% url 'login' %}">Login</a> to like</small>
-                {% endif %}
+{% if user.is_authenticated %}
+    {% if user.id == post.author.id %}
+        <b>You can't like your post</b>
+        {% else %}
+            {%if liked %}
+            <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-danger btn-sm">Unlike</button>
+            {% else %}
+            <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-primary btn-sm">Like</button>
+            {% endif %}
+    {% endif %}
+{% else %}
+<small><a href="{% url 'login' %}">Login</a> to like</small>
+{% endif %}
+
              - {{ total_likes }} Likes
     </form>
 <hr>
@@ -54,7 +59,7 @@
         <h5 class="card-title">{{ post.author.first_name }} {{ post.author.last_name }}</h5>
           <p class="small text-muted">
 
-          <a href="{% url 'show_profile_page' post.author.profile.id %}">Profile Page</a>
+          <a href="#">Profile Page</a>
 
 	{% if post.author.profile.website_url %}
 		| <a href="{{ post.author.profile.website_url }}">  Website</a>
