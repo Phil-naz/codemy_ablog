@@ -5,7 +5,7 @@
 - adding posts to a website with a photo;
 - possibility of formatting the text of the post. It is possible to make only registered and authorized users, who created this post;
 - the ability to edit and delete posts to certain users;
-- created a system of likes;
+- created a system of likes. User can't can like or dislike their posts;
 - created a post comment system;
 
-#### Install 'requirements.txt' and start project
+#### Install 'requirements.txt' and start project. I don't add 'db.sqlite3' to gitignore file, because it's small and some problem with creating a new DB file.
