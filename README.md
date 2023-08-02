@@ -12,7 +12,7 @@
 - Install 'requirements.txt'
 - In CMD go to the folder where the file 'manage.py' is located and enter the command:
 ```
-python3 manage.py runserver
+python manage.py runserver
 ```
 
 ##### I don't add 'db.sqlite3' to gitignore file, because it's small and some problem with creating a new DB file.
