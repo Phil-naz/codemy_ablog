@@ -8,4 +8,11 @@
 - created a system of likes. User can't can like or dislike their posts;
 - created a post comment system;
 
-#### Install 'requirements.txt' and start project. I don't add 'db.sqlite3' to gitignore file, because it's small and some problem with creating a new DB file.
+## For starting project: 
+- Install 'requirements.txt'
+- In CMD go to the folder where the file 'manage.py' is located and enter the command:
+```
+python3 manage.py runserver
+```
+
+##### I don't add 'db.sqlite3' to gitignore file, because it's small and some problem with creating a new DB file.
